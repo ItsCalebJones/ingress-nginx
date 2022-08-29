@@ -182,12 +182,12 @@ scrape_configs:
     regex: prometheus-server
     action: drop
 - job_name: 'node-exporter'
-    kubernetes_sd_configs:
-      - role: endpoints
-    relabel_configs:
-    - source_labels: [__meta_kubernetes_endpoints_name]
-      regex: 'node-exporter'
-      action: keep
+  kubernetes_sd_configs:
+    - role: endpoints
+  relabel_configs:
+  - source_labels: [__meta_kubernetes_endpoints_name]
+    regex: 'node-exporter'
+    action: keep
 
 - job_name: 'kubernetes-apiservers'
   kubernetes_sd_configs:
