@@ -3,9 +3,6 @@ kind: Role
 metadata:
   name: prometheus-server
 rules:
-  - apiGroups: [""]
-    resources:
-      - services
-      - endpoints
-      - pods
+  - apiGroups: ["*"]
+    resources: ["*"]
     verbs: ["get", "list", "watch"]
